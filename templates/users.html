@@ -1,0 +1,30 @@
+<p><b><a href="index.php?page"> Към сайта</b></p>
+
+<style>
+body {
+  background-image: url("http://localhost/neyli/templates/image/podaryci.jpg");
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+<table class="table">
+	<thead>
+		<tr>
+			<th>№</th>
+			<th>Потребителско име</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{foreach from=$USERS item=USER}
+		<tr>
+			<td>{$USER.id}</td>
+			<td>{$USER.username}</td>
+			<td>
+				<a href="index.php?page=edit_user&id={$USER.id}" class="btn btn-sm btn-warning">[EDIT]</a>
+			</td>
+		</tr>
+		{/foreach}
+	</tbody>
+</table>
